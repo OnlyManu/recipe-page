@@ -2,6 +2,71 @@
 @import "./libs/functions.scss";
 @import "./libs/mixins.scss";
 
+/*fonts*/
+$font-primary:'Montserrat', sans-serif;;
+$font-secondary: 'Playfair Display', serif;
+/*padding*/
+$padding-mobile: 12px;
+$padding-desktop: 236px;
+/*colors*/
+$color-primary: #333333;
+$color-secondary: #000000;
+$color-tertiary: #BDBDBD;
+$color-fancy: #F2994A;
+
+html{
+    font-size: 14px;
+    font-family: $font-primary;
+    color: $color-primary;
+}
 .container{
     width: 100%;
+    padding: {
+        right: $padding-mobile;
+        left: $padding-mobile;
+    };
+    display: flex;
+    flex-direction: column;
+}
+.heading{
+    font-family: $font-secondary;
+    font-style: normal;
+    color: $color-primary;
+    &.heading-lg{
+        color: $color-secondary;
+        @include setFontProps(24, 32, 700);
+    }
+    &.heading-md{
+        @include setFontProps(24, 32, 700);
+    }
+    &.heading-sm{
+        @include setFontProps(18, 24, 700);
+    }
+}
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    .description{
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        padding-right: 10px;
+        color: #4F4F4F;
+        font-style: italic;
+        @include setFontProps(12, 15, 500);
+    }
+    .banner-img{
+        margin-top: 5px;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+}
+aside{
+    display: flex;
+    flex-direction: column;
+    gap: 20.75px;
 }

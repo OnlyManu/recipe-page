@@ -43,4 +43,74 @@ td, th {
   padding: 0;
 }
 
+/*fonts*/
+/*padding*/
+/*colors*/
+html {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #333333;
+}
+
+.container {
+  width: 100%;
+  padding-right: 12px;
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  color: #333333;
+}
+.heading.heading-lg {
+  color: #000000;
+  font-size: 1.7142857143rem;
+  font-weight: 700;
+  line-height: 2.2857142857rem;
+}
+.heading.heading-md {
+  font-size: 1.7142857143rem;
+  font-weight: 700;
+  line-height: 2.2857142857rem;
+}
+.heading.heading-sm {
+  font-size: 1.2857142857rem;
+  font-weight: 700;
+  line-height: 1.7142857143rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+header .description {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-right: 10px;
+  color: #4F4F4F;
+  font-style: italic;
+  font-size: 0.8571428571rem;
+  font-weight: 500;
+  line-height: 1.0714285714rem;
+}
+header .banner-img {
+  margin-top: 5px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20.75px;
+}
+
 /*# sourceMappingURL=style.css.map */
