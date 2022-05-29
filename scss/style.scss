@@ -303,7 +303,7 @@ footer{
         gap: 16px;
         .description{
             @include setFontProps(14, 17, 500);
-            width: widthInVW(592, 1440);
+            width: widthInRem(617);
         }
         .banner-img{
             margin-top: 32px;
