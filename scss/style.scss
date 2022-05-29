@@ -6,8 +6,8 @@
 $font-primary:'Montserrat', sans-serif;;
 $font-secondary: 'Playfair Display', serif;
 /*padding*/
-$padding-mobile: 12px;
-$padding-desktop: 236px;
+$padding-mobile: widthInVW(12);
+$padding-desktop: widthInVW(236, 1440);
 /*colors*/
 $color-primary: #333333;
 $color-secondary: #000000;
@@ -84,6 +84,7 @@ aside{
             grid-area: title;
             @include setFontProps(8, 10, 700);
             color: $color-tertiary;
+            text-transform: uppercase;
         }
         .info{
             grid-area: info;
@@ -130,6 +131,11 @@ main{
     display: flex;
     flex-direction: column;
     gap: 23px;
+    .food-name{
+        font-family: $font-secondary;
+        font-style: italic;
+        @include setFontProps(18, 24, 400);
+    }
     .ingredient-list{
         display: flex;
         flex-direction: column;
@@ -206,6 +212,7 @@ main{
         display: grid;
         grid-template-columns: 36px 1fr;
         column-gap: 15px;
+        @include setFontProps(16, 20, 400);
         .order {
             font-family: $font-secondary;
             @include setFontProps(24, 24, 700);
@@ -235,6 +242,9 @@ main{
         display: block;
         text-decoration: none;
         color: $color-tertiary;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
 footer{
@@ -248,6 +258,128 @@ footer{
         font-weight: 700;
         &:hover{
             text-decoration: underline;
+        }
+    }
+}
+@media screen and (min-width: 992px) {
+    .container{
+        display: grid;
+        grid-template-areas: 
+        "head head"
+        "main aside"
+        "foot foot";
+        column-gap: widthInVW(170, 1440);
+        padding: {
+            right: $padding-desktop;
+            left: $padding-desktop;
+        };
+        header{
+            grid-area: head;
+        }
+        main{
+            grid-area: main;
+        }
+        aside{
+            grid-area: aside;
+        }
+        footer{
+            grid-area: foot;
+        }
+    }
+    .heading{
+        &.heading-lg{
+            @include setFontProps(48, 64, 700);
+        }
+        &.heading-md{
+            @include setFontProps(24, 32, 700);
+        }
+        &.heading-sm{
+            @include setFontProps(24, 32, 700);
+        }
+    }
+    header{
+        margin-top: 52;
+        margin-bottom: 48px;
+        gap: 16px;
+        .description{
+            @include setFontProps(14, 17, 500);
+            width: widthInVW(592, 1440);
+        }
+        .banner-img{
+            margin-top: 32px;
+        }
+    }
+    aside{
+        width: widthInVW(216, 1440);
+        height: fit-content;
+        gap: 43px;
+        padding: {
+            top: 57px;
+            bottom: 57px;
+            left: widthInVW(43, 1440);
+        };
+        background: #FFFFFF;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        .icon{
+            width: 28.33px;
+            height: auto;
+        }
+        .title{
+            @include setFontProps(10, 12, 700);
+        }
+        .info{
+            @include setFontProps(14, 17, 500);
+        }
+    }
+    .header{
+        .icon{
+            width: 27.10px;
+            height: auto;
+        }
+    }
+    .times{
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+    }
+    main{
+        margin-bottom: 93px;
+        gap: 0;
+    }
+    .section-ingredients{
+        margin-bottom: 28px;
+        .heading-sm{
+            margin-bottom: 32px;
+        }
+        .ingredients{
+            gap: 38px;
+        }
+    }
+    .food{
+        gap: 30px;
+        .ingredient-list{
+            gap: 13px;
+            li{
+                gap: 17px;
+                @include setFontProps(16, 25, 400);
+            }
+        }
+    }
+    .section-instructions{
+        gap: 32px;
+        margin-bottom: 57px;
+        .instructions{
+            gap: 29px;
+            .instruction{
+                column-gap: widthInVW(15, 1440);
+            }
+        }
+    }
+    .recipe-source{
+        font-size: fontSizeInRem(16);
+        a{
+            display: inline;
         }
     }
 }
