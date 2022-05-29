@@ -69,4 +69,185 @@ aside{
     display: flex;
     flex-direction: column;
     gap: 20.75px;
+    margin-bottom: 30.25px;
+    .block{
+        width: fit-content;
+        display: grid;
+        grid-template-areas: 
+        "icon title"
+        "icon info";
+        column-gap: 5.52px;
+        .icon{
+            grid-area: icon;
+        }
+        .title{
+            grid-area: title;
+            @include setFontProps(8, 10, 700);
+            color: $color-tertiary;
+        }
+        .info{
+            grid-area: info;
+            @include setFontProps(10, 12, 500);
+        }
+    }
+    .icon-clock{
+        path{
+            fill: #4F4F4F;
+        }
+    }
+}
+.header{
+    .info{
+        color: $color-fancy;
+    }
+    .icon{
+        path{
+            fill: $color-fancy;
+        }
+    }
+}
+.times{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 26px;
+}
+.section-ingredients{
+    .heading-sm{
+        margin-bottom: 13px;
+    }
+    .ingredients{
+        display: flex;
+        flex-direction: column;
+        gap: 39px;
+    }
+}
+.food{
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    .ingredient-list{
+        display: flex;
+        flex-direction: column;
+        li{
+            @include setFontProps(14, 25, 400);
+            display: grid;
+            grid-template-columns: 21px 1fr;
+            gap: 8px;
+            em{
+                font-weight: 700;                    
+            }
+        }
+        .checkbox{
+            position: relative;
+            width: 21px;
+            height: 21px;
+            user-select: none;
+            overflow: hidden;
+            margin: 0;
+            input{
+                position: absolute;
+                width: 0;
+                height: 0;
+                opacity: 0;
+                cursor: pointer;
+            }
+            .background{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                border: 1px solid #828282;
+                border-radius: 4px;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    display: none;
+                    left: 50%;
+                    top: 30%;
+                    width: 5px;
+                    height: 10px;
+                    border: solid white;
+                    border-width: 0 3px 3px 0;
+                    -webkit-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    transform: rotate(45deg) translateX(-60%);
+                }
+            }
+            &:hover input ~ .background{
+                border: 1px solid $color-fancy;
+            }
+            & input:checked ~ .background{
+                background-color: $color-fancy;
+                border: 1px solid white;
+            }
+            & input:checked ~ .background::after{
+                display: block;
+            }
+        }
+    }
+}
+.section-instructions{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    .instructions{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .instruction{
+        display: grid;
+        grid-template-columns: 36px 1fr;
+        column-gap: 15px;
+        .order {
+            font-family: $font-secondary;
+            @include setFontProps(24, 24, 700);
+            background: $color-fancy;
+            border-radius: 6px;
+            color: white;
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            span{
+                transform: translateY(-4px);
+            }
+            .six{
+                transform: translateY(-3px);
+            }
+        }
+    }
+}
+.recipe-source{
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: $color-tertiary;
+    a{
+        display: block;
+        text-decoration: none;
+        color: $color-tertiary;
+    }
+}
+footer{
+    text-align: center;
+    @include setFontProps(14, 17, 500);
+    color: #828282;
+    margin-bottom: 24px;
+    a{
+        color: #828282;
+        text-decoration: none;
+        font-weight: 700;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
 }
