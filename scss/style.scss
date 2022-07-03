@@ -261,6 +261,74 @@ footer{
         }
     }
 }
+@media screen and (min-width: 768px) {
+    .heading{
+        &.heading-lg{
+            @include setFontProps(48, 64, 700);
+        }
+        &.heading-md{
+            @include setFontProps(24, 32, 700);
+        }
+        &.heading-sm{
+            @include setFontProps(24, 32, 700);
+        }
+    }
+    header{
+        margin-top: 52;
+        margin-bottom: 48px;
+        gap: 16px;
+        .description{
+            @include setFontProps(14, 17, 500);
+            width: widthInRem(617);
+        }
+        .banner-img{
+            margin-top: 32px;
+        }
+    }
+    aside{
+        .icon{
+            width: 28.33px;
+            height: auto;
+        }
+        .title{
+            @include setFontProps(10, 12, 700);
+        }
+        .info{
+            @include setFontProps(14, 17, 500);
+        }
+    }
+    main{
+        margin-bottom: 93px;
+    }
+    .food{
+        gap: 30px;
+        .ingredient-list{
+            gap: 13px;
+            li{
+                gap: 17px;
+                @include setFontProps(16, 25, 400);
+            }
+        }
+    }
+    .section-ingredients{
+        margin-bottom: 28px;
+        .heading-sm{
+            margin-bottom: 32px;
+        }
+        .ingredients{
+            gap: 38px;
+        }
+    }
+    .section-instructions{
+        gap: 32px;
+        .instructions{
+            gap: 29px;
+        }
+    }
+    .recipe-source{
+        font-size: fontSizeInRem(16);
+    }
+}
 @media screen and (min-width: 992px) {
     .container{
         display: grid;
@@ -284,17 +352,6 @@ footer{
         }
         footer{
             grid-area: foot;
-        }
-    }
-    .heading{
-        &.heading-lg{
-            @include setFontProps(48, 64, 700);
-        }
-        &.heading-md{
-            @include setFontProps(24, 32, 700);
-        }
-        &.heading-sm{
-            @include setFontProps(24, 32, 700);
         }
     }
     header{
@@ -321,16 +378,6 @@ footer{
         background: #FFFFFF;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
-        .icon{
-            width: 28.33px;
-            height: auto;
-        }
-        .title{
-            @include setFontProps(10, 12, 700);
-        }
-        .info{
-            @include setFontProps(14, 17, 500);
-        }
     }
     .header{
         .icon{
@@ -344,40 +391,17 @@ footer{
         gap: 42px;
     }
     main{
-        margin-bottom: 93px;
         gap: 0;
     }
-    .section-ingredients{
-        margin-bottom: 28px;
-        .heading-sm{
-            margin-bottom: 32px;
-        }
-        .ingredients{
-            gap: 38px;
-        }
-    }
-    .food{
-        gap: 30px;
-        .ingredient-list{
-            gap: 13px;
-            li{
-                gap: 17px;
-                @include setFontProps(16, 25, 400);
-            }
-        }
-    }
     .section-instructions{
-        gap: 32px;
         margin-bottom: 57px;
         .instructions{
-            gap: 29px;
             .instruction{
                 column-gap: widthInVW(15, 1440);
             }
         }
     }
     .recipe-source{
-        font-size: fontSizeInRem(16);
         a{
             display: inline;
         }

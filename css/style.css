@@ -316,27 +316,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-@media screen and (min-width: 992px) {
-  .container {
-    display: grid;
-    grid-template-areas: "head head" "main aside" "foot foot";
-    column-gap: 11.8055555556vw;
-    padding-right: 16.3888888889vw;
-    padding-left: 16.3888888889vw;
-  }
-  .container header {
-    grid-area: head;
-  }
-  .container main {
-    grid-area: main;
-  }
-  .container aside {
-    grid-area: aside;
-  }
-  .container footer {
-    grid-area: foot;
-  }
-
+@media screen and (min-width: 768px) {
   .heading.heading-lg {
     font-size: 3.4285714286rem;
     font-weight: 700;
@@ -368,17 +348,6 @@ footer a:hover {
     margin-top: 32px;
   }
 
-  aside {
-    width: 15vw;
-    height: fit-content;
-    gap: 43px;
-    padding-top: 57px;
-    padding-bottom: 57px;
-    padding-left: 2.9861111111vw;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-  }
   aside .icon {
     width: 28.33px;
     height: auto;
@@ -394,30 +363,8 @@ footer a:hover {
     line-height: 1.2142857143rem;
   }
 
-  .header .icon {
-    width: 27.1px;
-    height: auto;
-  }
-
-  .times {
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
-  }
-
   main {
     margin-bottom: 93px;
-    gap: 0;
-  }
-
-  .section-ingredients {
-    margin-bottom: 28px;
-  }
-  .section-ingredients .heading-sm {
-    margin-bottom: 32px;
-  }
-  .section-ingredients .ingredients {
-    gap: 38px;
   }
 
   .food {
@@ -433,20 +380,97 @@ footer a:hover {
     line-height: 1.7857142857rem;
   }
 
+  .section-ingredients {
+    margin-bottom: 28px;
+  }
+  .section-ingredients .heading-sm {
+    margin-bottom: 32px;
+  }
+  .section-ingredients .ingredients {
+    gap: 38px;
+  }
+
   .section-instructions {
     gap: 32px;
-    margin-bottom: 57px;
   }
   .section-instructions .instructions {
     gap: 29px;
-  }
-  .section-instructions .instructions .instruction {
-    column-gap: 1.0416666667vw;
   }
 
   .recipe-source {
     font-size: 1.1428571429rem;
   }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    display: grid;
+    grid-template-areas: "head head" "main aside" "foot foot";
+    column-gap: 11.8055555556vw;
+    padding-right: 16.3888888889vw;
+    padding-left: 16.3888888889vw;
+  }
+  .container header {
+    grid-area: head;
+  }
+  .container main {
+    grid-area: main;
+  }
+  .container aside {
+    grid-area: aside;
+  }
+  .container footer {
+    grid-area: foot;
+  }
+
+  header {
+    margin-top: 52;
+    margin-bottom: 48px;
+    gap: 16px;
+  }
+  header .description {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2142857143rem;
+    width: 44.0714285714rem;
+  }
+  header .banner-img {
+    margin-top: 32px;
+  }
+
+  aside {
+    width: 15vw;
+    height: fit-content;
+    gap: 43px;
+    padding-top: 57px;
+    padding-bottom: 57px;
+    padding-left: 2.9861111111vw;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+
+  .header .icon {
+    width: 27.1px;
+    height: auto;
+  }
+
+  .times {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+  }
+
+  main {
+    gap: 0;
+  }
+
+  .section-instructions {
+    margin-bottom: 57px;
+  }
+  .section-instructions .instructions .instruction {
+    column-gap: 1.0416666667vw;
+  }
+
   .recipe-source a {
     display: inline;
   }
